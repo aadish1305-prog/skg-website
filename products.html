@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products &amp; Services — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Capability tabs / jump nav */
+    .cap-nav {
+      background: var(--off-white);
+      border-bottom: 1px solid #e0e3e8;
+      position: sticky;
+      top: 72px;
+      z-index: 100;
+    }
+    .cap-nav-inner {
+      display: flex;
+      gap: 0;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      overflow-x: auto;
+    }
+    .cap-nav-inner a {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      padding: 1rem 1.4rem;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .cap-nav-inner a:hover {
+      color: var(--navy);
+      border-color: var(--red);
+    }
+
+    /* Product section */
+    .product-section {
+      padding: 72px 0;
+      border-bottom: 1px solid #e0e3e8;
+    }
+    .product-section:nth-child(even) {
+      background: var(--off-white);
+    }
+    .product-section:last-child {
+      border-bottom: none;
+    }
+
+    .product-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .product-num {
+      font-family: var(--font-head);
+      font-size: 3.5rem;
+      color: #dde2e8;
+      line-height: 1;
+      min-width: 70px;
+      margin-top: -0.4rem;
+    }
+    .product-header-text h2 {
+      margin-bottom: 0.5rem;
+    }
+    .product-header-text p {
+      font-size: 1.05rem;
+      max-width: 680px;
+    }
+
+    /* Photo grid for each product */
+    .product-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .product-photo-grid.grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .product-photo-item {
+      border: 1px solid #e0e3e8;
+      overflow: hidden;
+    }
+    .product-photo-item .media-placeholder {
+      height: 220px;
+    }
+    .product-photo-caption {
+      padding: 0.6rem 0.85rem;
+      background: var(--navy);
+    }
+    .product-photo-caption strong {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .product-photo-caption span {
+      font-size: 0.76rem;
+      color: #7a8fa8;
+      font-family: var(--font-body);
+    }
+
+    /* Materials handled */
+    .material-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .material-tag {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid #c8cdd5;
+      color: var(--text-mid);
+      background: var(--white);
+    }
+
+    /* Highlight note */
+    .product-note {
+      background: var(--navy);
+      border-left: 4px solid var(--red);
+      padding: 1.4rem 1.8rem;
+      margin-top: 2rem;
+    }
+    .product-note p {
+      color: #a0aebf;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .product-note strong { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .product-photo-grid,
+      .product-photo-grid.grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .product-header { flex-direction: column; gap: 0.5rem; }
+      .product-num { font-size: 2.5rem; }
+    }
+    @media (max-width: 480px) {
+      .product-photo-grid,
+      .product-photo-grid.grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">What We Deliver</p>
+    <h1>Products &amp; Services</h1>
+    <p>Four core engineering capabilities — from precision dies and graphite components to titanium aerospace parts and heavy structural fabrications.</p>
+  </div>
+</section>
+
+<!-- ══ JUMP NAV ══ -->
+<nav class="cap-nav">
+  <div class="cap-nav-inner">
+    <a href="#dies">Tools, Dies &amp; Fixtures</a>
+    <a href="#graphite">Graphite Machining</a>
+    <a href="#titanium">Titanium Machining</a>
+    <a href="#fabrication">Heavy Fabrication</a>
+  </div>
+</nav>
+
+<!-- ══ 01 — TOOLS, DIES, JIGS & FIXTURES ══ -->
+<div class="product-section" id="dies">
+  <div class="container">
+    <div class="product-header">
+      <div class="product-num">01</div>
+      <div class="product-header-text">
+        <p class="section-label">Core Capability</p>
+        <h2>Tools, Dies, Jigs &amp; Fixtures</h2>
+        <div class="divider"></div>
+        <p>Design and manufacture of precision tools, dies, jigs and fixtures. Machining of client-supplied cast components to tight tolerances across a variety of materials and component sizes — from intricate die cavities to large fixture bases.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 2rem;">
+      <div>
+        <h3 style="margin-bottom: 1rem;">What We Produce</h3>
+        <ul class="check-list">
+          <li>Precision die cavities and runner blocks with intricate channel machining</li>
+          <li>High-precision die mould cavities with cooling channels and fine surface finish</li>
+          <li>Automotive die cast component machining — client-supplied castings machined to tolerance</li>
+          <li>Large cast component machining on our KOLB Double Column VMC</li>
+          <li>Surface plates, fixture bases, and jig bodies</li>
+          <li>Machining of components in steel, cast iron, aluminium alloys, and specialty metals</li>
+        </ul>
+        <div style="margin-top: 1.5rem;">
+          <h4 style="margin-bottom: 0.6rem; font-size: 0.9rem;">Materials Handled</h4>
+          <div class="material-list">
+            <span class="material-tag">Steel</span>
+            <span class="material-tag">Cast Iron</span>
+            <span class="material-tag">Aluminium Alloys</span>
+            <span class="material-tag">Tool Steel</span>
+            <span class="material-tag">Copper</span>
+            <span class="material-tag">EN Series</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="images/dies-main.jpg" alt="Die machining" style="width:100%;height:340px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+
+    <div class="product-photo-grid">
+      <div class="product-photo-item">
+        <img src="images/dies-automotive.jpg" alt="Automotive die cast component" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Automotive Die Cast Component</strong>
+          <span>Client-supplied casting, machined to tolerance</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/dies-runner-block.jpg" alt="Precision die components" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Precision Die Components</strong>
+          <span>Runner blocks with intricate channel machining</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/dies-cavity.jpg" alt="Die mould cavity" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>High-Precision Die Mould Cavity</strong>
+          <span>With cooling channels — fine surface finish</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/dies-large-cast.jpg" alt="Large cast component machining" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Large Cast Component Machining</strong>
+          <span>KOLB Double Column VMC in operation</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/dies-surface-plate.jpg" alt="Surface plate" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Surface Plate / Fixture Base</strong>
+          <span>Precision-machined reference surface</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/dies-active-vmc.jpg" alt="Active VMC machining" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Active VMC Machining</strong>
+          <span>Large cast component on KOLB VMC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 02 — GRAPHITE ══ -->
+<div class="product-section" id="graphite">
+  <div class="container">
+    <div class="product-header">
+      <div class="product-num">02</div>
+      <div class="product-header-text">
+        <p class="section-label">Specialty Material</p>
+        <h2>Precision Machining — Graphite</h2>
+        <div class="divider"></div>
+        <p>Specialised machining of graphite components including baffle plates for nuclear power plant cooling towers, graphite trays, and crucible blocks. Our facility features a centralised vacuum dust collection system and dedicated graphite tooling — making us one of the few facilities in the region with this capability.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 2rem;">
+      <div>
+        <h3 style="margin-bottom: 1rem;">Graphite Components We Machine</h3>
+        <ul class="check-list">
+          <li>Graphite baffle plates — milled from solid graphite plate (chemical and nuclear applications)</li>
+          <li>Graphite trays for metal casting applications</li>
+          <li>Crucible blocks for high-temperature industrial use</li>
+          <li>Segmented graphite fixtures — critical profiling milled from solid graphite block</li>
+          <li>Custom graphite profiles to client drawing and specification</li>
+        </ul>
+        <div class="product-note">
+          <p><strong>Specialist Facility:</strong> Graphite machining requires a dedicated dust management system due to the conductive nature of graphite particles. Our centralised vacuum collection system and isolated machining setup ensure safe, contamination-free production.</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/graphite-main.jpg" alt="Graphite components" style="width:100%;height:360px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+
+    <div class="product-photo-grid">
+      <div class="product-photo-item">
+        <img src="images/graphite-baffle.jpg" alt="Graphite baffle plate" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Graphite Baffle Plate</strong>
+          <span>Milled from solid graphite — chemical industry</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/graphite-trays.jpg" alt="Graphite trays" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Graphite Trays</strong>
+          <span>Metal casting application</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/graphite-fixture.jpg" alt="Segmented graphite fixture" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Segmented Graphite Fixture</strong>
+          <span>Critical profiling — milled from solid block</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03 — TITANIUM ══ -->
+<div class="product-section" id="titanium">
+  <div class="container">
+    <div class="product-header">
+      <div class="product-num">03</div>
+      <div class="product-header-text">
+        <p class="section-label">Aerospace Grade</p>
+        <h2>Precision Machining — Titanium</h2>
+        <div class="divider"></div>
+        <p>Titanium is a notoriously difficult material to machine, requiring specialised tooling, controlled cutting parameters and experienced operators. We supply precision-machined titanium components to HAL (Hindustan Aeronautics Limited), meeting strict aerospace-grade tolerances.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 2rem;">
+      <div>
+        <h3 style="margin-bottom: 1rem;">Titanium Machining Highlights</h3>
+        <ul class="check-list">
+          <li>Precision profile milling of titanium blocks to aerospace-grade dimensional tolerances</li>
+          <li>Dedicated tooling and controlled cutting parameters to manage heat generation</li>
+          <li>Experienced operators trained in handling titanium's unique machining challenges</li>
+          <li>Approved supplier to HAL — Hindustan Aeronautics Limited</li>
+          <li>Full dimensional verification via in-process inspection and external CMM</li>
+        </ul>
+        <div class="product-note" style="margin-top: 1.5rem;">
+          <p><strong>HAL Approved Supplier:</strong> We supply precision-machined titanium blocks and components directly to Hindustan Aeronautics Limited (HAL), one of India's premier aerospace organisations — a testament to the precision and reliability our team delivers.</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/titanium-main.jpg" alt="Titanium components" style="width:100%;height:360px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+
+    <div style="max-width: 560px; margin-top: 1.5rem;">
+      <div class="product-photo-item">
+        <img src="images/titanium-blocks-hal.jpg" alt="Titanium blocks for HAL" style="width:100%;height:280px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Titanium Blocks — Supplied to HAL</strong>
+          <span>Precision profile milled, aerospace-grade tolerances — Hindustan Aeronautics Limited</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 — HEAVY FABRICATION ══ -->
+<div class="product-section" id="fabrication">
+  <div class="container">
+    <div class="product-header">
+      <div class="product-num">04</div>
+      <div class="product-header-text">
+        <p class="section-label">Large Scale Work</p>
+        <h2>Heavy Fabrication</h2>
+        <div class="divider"></div>
+        <p>Heavy structural fabrication and machining of large assemblies — including die cooler assemblies, fabricated and machined risers, and large fixture plates — supported by our EOT crane infrastructure for safe handling of heavy components.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom: 2rem;">
+      <div>
+        <h3 style="margin-bottom: 1rem;">Heavy Fabrication Work</h3>
+        <ul class="check-list">
+          <li>Die cooler assemblies — fabricated and precision machined steel assemblies with copper cooling blocks</li>
+          <li>Machined and fabricated risers — large fabricated riser structures with precision-machined T-slot surfaces</li>
+          <li>Large fixture plates — welded and machined to tight tolerances for use in production setups</li>
+          <li>Structural machining of large steel weldments and assemblies</li>
+          <li>Components handled up to 7.5 tonnes with our overhead EOT crane infrastructure</li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/fabrication-main.jpg" alt="Heavy fabrication" style="width:100%;height:340px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+
+    <div class="product-photo-grid">
+      <div class="product-photo-item">
+        <img src="images/fab-die-cooler-1.jpg" alt="Die cooler assembly" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Die Cooler Assembly</strong>
+          <span>Fabricated &amp; machined steel assembly</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/fab-die-cooler-2.jpg" alt="Die cooler assembly internal" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Die Cooler Assembly — Internal</strong>
+          <span>Precision machined copper blocks in steel assembly</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/fab-risers.jpg" alt="Fabricated risers" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Machined &amp; Fabricated Risers</strong>
+          <span>Large fabricated riser structure</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/fab-risers-top.jpg" alt="Machined risers top view" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Machined Risers — Top View</strong>
+          <span>Precision machined T-slot surface</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/fab-fixture-wip.jpg" alt="Fabricated fixture in progress" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Fabricated Fixture Plate</strong>
+          <span>Large welded &amp; machined fixture — in progress</span>
+        </div>
+      </div>
+      <div class="product-photo-item">
+        <img src="images/fab-fixture-done.jpg" alt="Completed fixture plate" style="width:100%;height:220px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        <div class="product-photo-caption">
+          <strong>Fabricated Fixture Plate — Completed</strong>
+          <span>Large completed fixture plate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Have a specific requirement?</h2>
+    <p>Share your drawing or specification — our engineering team will assess feasibility and provide a quotation.</p>
+    <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

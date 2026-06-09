@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M/s S.K. Gandhi — Heavy Engineering & Precision Machining</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Home Hero with video ── */
+    .home-hero {
+      background: var(--navy);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.28;
+    }
+    /* Shown only when video file is not present */
+    .hero-video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.09);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      gap: 0.5rem;
+      border: 2px dashed rgba(255,255,255,0.07);
+      margin: 2rem;
+    }
+    .home-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .hero-est {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .home-hero h1 {
+      color: var(--white);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.18;
+      max-width: 680px;
+      margin-bottom: 1.4rem;
+    }
+    .home-hero h1 em { font-style: italic; color: #a0b4c8; }
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: #a0aebf;
+      max-width: 520px;
+      margin-bottom: 2.4rem;
+      line-height: 1.7;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Red bar ── */
+    .red-bar { background: var(--red); padding: 1.5rem 0; }
+    .red-bar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1140px; margin: 0 auto; padding: 0 2rem; gap: 1rem; flex-wrap: wrap;
+    }
+    .red-bar p { color: var(--white); font-size: 1rem; font-weight: 600; margin: 0; letter-spacing: 0.04em; }
+    .red-bar span { color: rgba(255,255,255,0.7); font-weight: 400; font-size: 0.9rem; }
+
+    /* ── Services grid on home ── */
+    .service-card {
+      background: var(--white); border: 1px solid #e0e3e8;
+      border-top: 4px solid var(--red); padding: 2rem; transition: box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .service-card .service-num { font-family: var(--font-head); font-size: 2rem; color: #dde2e8; line-height: 1; margin-bottom: 0.6rem; }
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.92rem; }
+    .service-card a { display: inline-block; margin-top: 1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); }
+    .service-card a:hover { text-decoration: underline; }
+
+    /* ── Why choose us ── */
+    .why-item { display: flex; gap: 1.2rem; margin-bottom: 2rem; align-items: flex-start; }
+    .why-icon { width: 44px; height: 44px; min-width: 44px; background: var(--red); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .why-icon svg { fill: none; stroke: white; stroke-width: 1.8; }
+    .why-item h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .why-item p { font-size: 0.92rem; color: var(--text-mid); }
+
+    /* ── CTA band ── */
+    .cta-band { background: var(--navy-mid); padding: 64px 0; text-align: center; border-top: 1px solid var(--navy-light); border-bottom: 1px solid var(--navy-light); }
+    .cta-band h2 { color: var(--white); margin-bottom: 0.6rem; }
+    .cta-band p { color: #a0aebf; max-width: 540px; margin: 0 auto 2rem; }
+
+    /* ── Logo marquee ── */
+    .clients-strip {
+      background: var(--off-white);
+      padding: 40px 0;
+      border-top: 1px solid #e0e3e8;
+      border-bottom: 1px solid #e0e3e8;
+      overflow: hidden;
+    }
+    .clients-strip .section-label { text-align: center; display: block; margin-bottom: 1.5rem; }
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      animation: marqueeScroll 28s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-wrap { overflow: hidden; }
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 120px;
+    }
+    .marquee-logo-box {
+      width: 120px;
+      height: 56px;
+      background: var(--white);
+      border: 1px solid #dde2e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0.4rem;
+    }
+    /* Once you add logo images, the <img> inside will fill this box */
+    .marquee-logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    /* Fallback text shown when no image */
+    .marquee-logo-box span {
+      font-family: var(--font-head);
+      font-size: 0.65rem;
+      color: #7a8898;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .marquee-logo p {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Careers teaser on home ── */
+    .careers-teaser {
+      background: var(--navy);
+      border-top: 3px solid var(--red);
+      padding: 56px 0;
+    }
+    .careers-teaser-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .careers-teaser h2 { color: var(--white); margin-bottom: 0.4rem; }
+    .careers-teaser p { color: #a0aebf; margin: 0; max-width: 520px; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ HERO WITH LOOPING VIDEO ══ -->
+<section class="home-hero">
+  <div class="hero-video-wrap">
+    <!--
+      TO ADD YOUR VIDEO:
+      1. Save your video file as:  videos/hero.mp4
+      2. The video will loop automatically and play silently in the background
+      3. Remove the placeholder div below once your video is in place
+    -->
+    <video autoplay muted loop playsinline poster="images/hero-bg.jpg">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <!-- Remove this placeholder once videos/hero.mp4 is in place -->
+    <div class="hero-video-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      &nbsp;<strong>videos/hero.mp4</strong>
+    </div>
+  </div>
+  <div class="home-hero-content">
+    <span class="hero-est">Established 1973 · MIDC Satpur, Nashik</span>
+    <h1>Trusted by Industry.<br><em>Built on Precision.</em></h1>
+    <p class="hero-tagline">Over 50 years of heavy engineering and precision machining — serving India's most demanding industries from automotive to aerospace.</p>
+    <div class="hero-cta">
+      <a href="products.html" class="btn btn-primary">Our Capabilities</a>
+      <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STAT BAR ══ -->
+<div class="stat-bar">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-number">50<span class="stat-accent">+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">20</div>
+        <div class="stat-label">Skilled Professionals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">9<span class="stat-accent">+</span></div>
+        <div class="stat-label">Marquee Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Core Capabilities</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT INTRO ══ -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">50 Years of Engineering Excellence in Nashik</h2>
+        <div class="divider"></div>
+        <p>M/s S.K. Gandhi is a Nashik-based heavy engineering and precision machining company established in 1973. We combine decades of hands-on expertise with modern CNC and VMC infrastructure to deliver components and tooling of the highest precision.</p>
+        <p>Operating from MIDC Satpur, our ISO 9001:2015 certified facility serves clients across automotive diecasting, defence, energy, and specialty material sectors.</p>
+        <a href="about.html" class="btn btn-outline-red" style="margin-top:1rem;">Learn More About Us</a>
+      </div>
+      <div>
+        <img src="images/about-facility.jpg" alt="S.K. Gandhi Shop Floor" style="width:100%;height:400px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RED BAR — ISO ══ -->
+<div class="red-bar">
+  <div class="red-bar-inner">
+    <p>ISO 9001:2015 Certified &nbsp;<span>Certified by QRO — a IAF accredited body · Certificate No. 305026051456Q · Valid until May 2029</span></p>
+    <a href="quality.html" class="btn btn-outline" style="padding: 0.55rem 1.4rem; font-size:0.82rem;">View Certificate</a>
+  </div>
+</div>
+
+<!-- ══ CAPABILITIES ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Our Core Capabilities</h2>
+    <div class="divider"></div>
+    <div class="card-grid card-grid-2" style="margin-top: 2rem;">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Tools, Dies, Jigs &amp; Fixtures</h3>
+        <p>Design and manufacture of precision tools, dies, jigs and fixtures. Machining of client-supplied cast components to tight tolerances across a variety of materials and sizes.</p>
+        <a href="products.html#dies">View Details →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Precision Machining — Graphite</h3>
+        <p>Specialised machining of graphite components including baffle plates, trays and crucible blocks with a centralised vacuum dust collection system and dedicated tooling.</p>
+        <a href="products.html#graphite">View Details →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Precision Machining — Titanium</h3>
+        <p>Aerospace-grade titanium machining with specialised tooling and controlled cutting parameters. Supplying precision components to HAL (Hindustan Aeronautics Limited).</p>
+        <a href="products.html#titanium">View Details →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Heavy Fabrication</h3>
+        <p>Heavy structural fabrication and machining of large assemblies — die cooler assemblies, fabricated risers and large fixture plates — supported by EOT crane infrastructure.</p>
+        <a href="products.html#fabrication">View Details →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title">Reliability and Accuracy in Every Component</h2>
+        <div class="divider"></div>
+        <p>Across five decades, we have built our reputation on delivering what we promise — components that meet tolerances, delivered on schedule, backed by a quality system our clients can rely on.</p>
+        <a href="infrastructure.html" class="btn btn-outline-red" style="margin-top:1rem;">View Our Machinery</a>
+      </div>
+      <div>
+        <div class="why-item">
+          <div class="why-icon">
+            <!-- 50 years: stacked layers / legacy -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h4>50+ Years of Expertise</h4>
+            <p>Decades of hands-on experience in heavy engineering and precision machining across diverse and demanding industries.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <!-- CNC/VMC: a milling cutter / tool bit -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+              <rect x="9" y="2" width="6" height="10" rx="1"/>
+              <path d="M12 12v4"/>
+              <path d="M8 16h8l-1 5H9l-1-5z"/>
+              <path d="M9 19h6"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Modern CNC / VMC Infrastructure</h4>
+            <p>German and Taiwanese VMC machines with Mitsubishi, Fanuc and Siemens controllers — capable of large format and precision work.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <!-- ISO certified: shield with check -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h4>ISO 9001:2015 Certified</h4>
+            <p>Our independently certified quality management system ensures every component meets the highest standards of consistency and precision.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <!-- Specialty material: atom / molecule -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          </div>
+          <div>
+            <h4>Specialty Material Capability</h4>
+            <p>Advanced machining of graphite and titanium — materials requiring dedicated equipment, tooling, and experienced operators.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS MARQUEE ══ -->
+<div class="clients-strip">
+  <div class="container">
+    <span class="section-label">Trusted By</span>
+  </div>
+  <!--
+    HOW TO ADD YOUR CLIENT LOGOS:
+    Save each logo to the images/ folder as listed below.
+    The <img> tag will auto-show the logo once the file exists.
+    The fallback text disappears once an image loads.
+    The list is duplicated (×2) to create a seamless infinite scroll.
+  -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- SET 1 -->
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-gil.png" alt="Graphite India Limited" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-mahindra.png" alt="Mahindra" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-atlascopco.png" alt="Atlas Copco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-bosch.png" alt="Bosch" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-abb.png" alt="ABB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-hal.png" alt="HAL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-jbm.png" alt="JBM Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-asb.png" alt="ASB International" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-epiroc.png" alt="Epiroc" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <!-- SET 2 — duplicate for seamless loop -->
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-gil.png" alt="Graphite India Limited" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-mahindra.png" alt="Mahindra" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-atlascopco.png" alt="Atlas Copco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-bosch.png" alt="Bosch" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-abb.png" alt="ABB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-hal.png" alt="HAL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-jbm.png" alt="JBM Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-asb.png" alt="ASB International" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+      <div class="marquee-logo">
+        <div class="marquee-logo-box">
+          <img src="images/logo-epiroc.png" alt="Epiroc" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CAREERS TEASER ══ -->
+<div class="careers-teaser">
+  <div class="container">
+    <div class="careers-teaser-inner">
+      <div>
+        <h2>Join Our Team</h2>
+        <p>We are always looking for skilled machinists, engineers, and operators. View current openings and apply directly.</p>
+      </div>
+      <a href="careers.html" class="btn btn-primary">View Open Positions</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to discuss your requirements?</h2>
+    <p>We work with engineers and procurement teams to deliver precision components and fabrications on specification, on time.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

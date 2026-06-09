@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .team-card {
+      background: var(--white);
+      border: 1px solid #e0e3e8;
+      border-top: 4px solid var(--red);
+      padding: 2rem;
+      text-align: center;
+    }
+    .team-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #dde2ea;
+      border: 2px dashed #aab0bb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      font-size: 0.72rem;
+      color: #888;
+      font-family: var(--font-body);
+      text-align: center;
+      padding: 0.5rem;
+      line-height: 1.4;
+    }
+    .team-card .role {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.3rem;
+    }
+    .team-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .team-card p { font-size: 0.9rem; }
+    .team-card .contact-line {
+      margin-top: 0.8rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+    .team-card .contact-line a { color: var(--navy); }
+
+    .milestone-row {
+      display: flex;
+      gap: 0;
+      border-left: 3px solid var(--red);
+      padding-left: 2rem;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .milestone {
+      position: relative;
+    }
+    .milestone::before {
+      content: '';
+      position: absolute;
+      left: -2.4rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 2px solid var(--white);
+      outline: 2px solid var(--red);
+    }
+    .milestone-year {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .milestone p { font-size: 0.95rem; margin: 0; }
+
+    .ops-structure {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      border: 1px solid #e0e3e8;
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+    .ops-col {
+      flex: 1;
+      padding: 1.8rem 1.4rem;
+      border-right: 1px solid #e0e3e8;
+      text-align: center;
+    }
+    .ops-col:last-child { border-right: none; }
+    .ops-col .ops-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .ops-col h4 {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .ops-col p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+
+    @media (max-width: 640px) {
+      .ops-structure { flex-direction: column; }
+      .ops-col { border-right: none; border-bottom: 1px solid #e0e3e8; }
+      .ops-col:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Our Story</p>
+    <h1>About M/s S.K. Gandhi</h1>
+    <p>Over five decades of precision engineering from the heart of Nashik's industrial belt — built on craftsmanship, commitment, and consistency.</p>
+  </div>
+</section>
+
+<!-- ══ COMPANY STORY ══ -->
+<section>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="section-label">Est. 1973</p>
+        <h2 class="section-title">Our Story &amp; Commitment</h2>
+        <div class="divider"></div>
+        <p>M/s S.K. Gandhi was established in 1973 at MIDC Satpur, Nashik — one of Maharashtra's premier industrial zones. What began as a precision machining workshop has grown over five decades into a trusted name in heavy engineering, serving some of India's and the world's most demanding clients.</p>
+        <p>We combine decades of hands-on expertise with a modern fleet of CNC and VMC machinery to deliver components and tooling of the highest precision. Our team of dedicated professionals is committed to reliability, accuracy, and on-time delivery — making us a trusted partner for clients across automotive diecasting, defence, energy, and specialty material machining sectors.</p>
+        <p>Today, led by second-generation management, M/s S.K. Gandhi continues to expand its capabilities while maintaining the exacting standards that have defined the company since its founding.</p>
+      </div>
+      <div>
+        <img src="images/facility-exterior.jpg" alt="S.K. Gandhi Facility" style="width:100%;height:420px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KEY FACTS ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">At a Glance</p>
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="divider"></div>
+    <div class="card-grid card-grid-2" style="margin-top: 2rem;">
+      <div class="card">
+        <h3>50+ Years of Expertise</h3>
+        <p>Decades of hands-on experience in heavy engineering and precision machining across diverse and demanding industries — built through consistent delivery and long-term client relationships.</p>
+      </div>
+      <div class="card">
+        <h3>Modern CNC / VMC Infrastructure</h3>
+        <p>Equipped with German and Taiwanese VMC machines controlled by Mitsubishi, Fanuc and Siemens controllers, our facility handles components from intricate precision parts to large heavy engineering workpieces.</p>
+      </div>
+      <div class="card">
+        <h3>Specialty Material Capability</h3>
+        <p>Advanced machining of graphite and titanium with a centralised vacuum dust collection system and specialised tooling — a capability few facilities in the region can offer.</p>
+      </div>
+      <div class="card">
+        <h3>ISO 9001:2015 Certified</h3>
+        <p>Our quality management system is independently certified by QRO, ensuring consistent delivery of precision-engineered components that meet the most exacting dimensional requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Our People</p>
+    <h2 class="section-title">The People Behind the Precision</h2>
+    <div class="divider"></div>
+    <p style="max-width:640px; margin-bottom: 2.5rem;">Our team of 20 dedicated professionals combines deep technical expertise with hands-on experience to deliver engineering solutions that meet the most demanding requirements.</p>
+
+    <!-- Management -->
+    <div class="card-grid card-grid-3" style="margin-bottom: 2.5rem;">
+      <div class="team-card">
+        <img src="images/sureshchandra.jpg" alt="Sureshchandra Gandhi" style="width:150px;height:150px;border-radius:0%;object-fit:cover;margin:0 auto 1.2rem;display:block;" onerror="this.style.background='#dde2ea'">
+        <div class="role">Founder</div>
+        <h3>Sureshchandra Gandhi</h3>
+        <p>Founder of M/s S.K. Gandhi, who established the company in 1973 at MIDC Satpur, Nashik, laying the foundation of precision and integrity that continues to define the firm today.</p>
+      </div>
+      <div class="team-card">
+        <img src="images/gajkumar.jpg" alt="Gajkumar Gandhi" style="width:150px;height:150px;border-radius:0%;object-fit:cover;margin:0 auto 1.2rem;display:block;" onerror="this.style.background='#dde2ea'">
+        <div class="role">Chief Executive Officer</div>
+        <h3>Gajkumar Gandhi</h3>
+        <p>Driving force behind the company's growth and long-term client relationships — continuing the founder's legacy with a focus on quality and reliability.</p>
+        <div class="contact-line"><a href="tel:+919822029872">+91 98220 29872</a></div>
+      </div>
+      <div class="team-card">
+        <img src="images/aadish.jpg" alt="Aadish Gandhi" style="width:150px;height:150px;border-radius:0%;object-fit:cover;margin:0 auto 1.2rem;display:block;" onerror="this.style.background='#dde2ea'">
+        <div class="role">Chief Operating Officer</div>
+        <h3>Aadish Gandhi</h3>
+        <p>Overseeing day-to-day operations, production quality, and new capability development with a focus on precision and on-time delivery.</p>
+        <div class="contact-line"><a href="tel:+918888830806">+91 88888 30806</a></div>
+      </div>
+    </div>
+
+    <!-- Operational Structure -->
+    <h3 style="margin-bottom: 0.5rem;">Operational Structure</h3>
+    <p style="margin-bottom: 0;">Our team is organised across five functional layers to ensure precision, accountability, and on-time delivery.</p>
+    <div class="ops-structure">
+      <div class="ops-col">
+        <div class="ops-num">1</div>
+        <h4>Management</h4>
+        <p>Strategic direction &amp; client relationships</p>
+      </div>
+      <div class="ops-col">
+        <div class="ops-num">4</div>
+        <h4>Engineering Team</h4>
+        <p>Design, quality &amp; materials — 10+ yrs each</p>
+      </div>
+      <div class="ops-col">
+        <div class="ops-num">3</div>
+        <h4>Shop Floor Supervisors</h4>
+        <p>Overseeing day-to-day production</p>
+      </div>
+      <div class="ops-col">
+        <div class="ops-num">10</div>
+        <h4>VMC &amp; Conventional Operators</h4>
+        <p>Skilled CNC &amp; conventional machine operators</p>
+      </div>
+      <div class="ops-col">
+        <div class="ops-num">3</div>
+        <h4>Support Staff</h4>
+        <p>Floor support &amp; operational logistics</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Interested in working with us?</h2>
+    <p>Whether you have a complex precision requirement or a large fabrication job, we're ready to discuss how we can help.</p>
+    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

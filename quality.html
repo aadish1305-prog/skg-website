@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quality &amp; Certification — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cert-block {
+      background: var(--navy);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .cert-details .cert-row {
+      display: flex;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--navy-light);
+    }
+    .cert-details .cert-row:last-child { border-bottom: none; }
+    .cert-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      min-width: 120px;
+      font-weight: 700;
+      padding-top: 0.1rem;
+    }
+    .cert-value {
+      font-family: var(--font-body);
+      font-size: 0.97rem;
+      color: var(--white);
+      line-height: 1.5;
+    }
+    .cert-image-placeholder {
+      background: rgba(255,255,255,0.05);
+      border: 2px dashed rgba(255,255,255,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.35);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 2rem;
+      gap: 0.5rem;
+      min-height: 320px;
+    }
+
+    .qms-pillar {
+      background: var(--white);
+      border: 1px solid #e0e3e8;
+      border-top: 4px solid var(--red);
+      padding: 2rem;
+    }
+    .qms-pillar h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .qms-pillar p { font-size: 0.93rem; }
+
+    .inspection-flow-section {
+      background: var(--off-white);
+      padding: 72px 0;
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid #e0e3e8;
+      overflow: hidden;
+    }
+    .flow-step {
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      border-right: 1px solid #e0e3e8;
+      position: relative;
+    }
+    .flow-step:last-child { border-right: none; }
+    .flow-step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      margin: 0 auto 0.8rem;
+    }
+    .flow-step h4 {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .inspection-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .inspection-panel {
+      border: 1px solid #e0e3e8;
+      padding: 2rem;
+    }
+    .inspection-panel h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--red);
+    }
+
+    @media (max-width: 960px) {
+      .cert-block { grid-template-columns: 1fr; gap: 2rem; }
+      .flow-steps { grid-template-columns: repeat(3, 1fr); }
+      .flow-step:nth-child(3) { border-right: none; }
+      .flow-step:nth-child(3), .flow-step:nth-child(4), .flow-step:nth-child(5) {
+        border-top: 1px solid #e0e3e8;
+      }
+    }
+    @media (max-width: 640px) {
+      .flow-steps { grid-template-columns: repeat(2, 1fr); }
+      .inspection-two-col { grid-template-columns: 1fr; }
+      .cert-block { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Our Commitment</p>
+    <h1>Quality &amp; Certification</h1>
+    <p>Every component leaving our facility is backed by a certified quality management system, in-process inspection, and independent dimensional verification.</p>
+  </div>
+</section>
+
+<!-- ══ ISO CERTIFICATE ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Certification</p>
+    <h2 class="section-title">ISO 9001:2015 Certified</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom: 2.5rem; max-width: 680px;">Our quality management system has been independently assessed and certified by QRO — Quality Research Organization, a IAF accredited body — confirming our compliance with the internationally recognised ISO 9001:2015 standard.</p>
+
+    <div class="cert-block">
+      <div class="cert-details">
+        <div class="cert-row">
+          <span class="cert-label">Standard</span>
+          <span class="cert-value">ISO 9001:2015 Quality Management System</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Certificate No.</span>
+          <span class="cert-value">305026051456Q</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Issued By</span>
+          <span class="cert-value">QRO — Quality Research Organization</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Date Issued</span>
+          <span class="cert-value">14th May 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Valid Until</span>
+          <span class="cert-value">13th May 2029</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Scope</span>
+          <span class="cert-value">Manufacturing and Precision Machining of Metal Castings, Dies, Jigs &amp; Fixtures, and Graphite Components</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-label">Facility</span>
+          <span class="cert-value">Plot D 21/22, MIDC Satpur, Nashik – 422007, Maharashtra, India</span>
+        </div>
+      </div>
+      <div>
+        <img src="images/iso-certificate.jpg" alt="ISO 9001:2015 Certificate" style="width:100%;object-fit:contain;display:block;background:#fff;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QMS PILLARS ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">Quality System</p>
+    <h2 class="section-title">Our Quality Management System</h2>
+    <div class="divider"></div>
+    <p style="max-width: 680px; margin-bottom: 2.5rem;">Our Quality Management System is built on the principles of ISO 9001:2015, ensuring that every component we deliver meets the highest standards of precision, consistency and reliability.</p>
+
+    <div class="card-grid card-grid-3">
+      <div class="qms-pillar">
+        <h3>Process Control</h3>
+        <p>Every machining operation is carried out following defined process parameters, ensuring repeatability and dimensional accuracy across all production runs — from single prototypes to repeat orders.</p>
+      </div>
+      <div class="qms-pillar">
+        <h3>In-Process Inspection</h3>
+        <p>Our skilled workforce conducts in-process inspections at each stage of machining to identify and correct deviations before they propagate — reducing rework and ensuring first-time accuracy.</p>
+      </div>
+      <div class="qms-pillar">
+        <h3>Internal Quality Audits</h3>
+        <p>Regular internal audits are conducted to ensure compliance with our QMS procedures and to drive continuous improvement across all operations and machining processes.</p>
+      </div>
+      <div class="qms-pillar">
+        <h3>First-Article Inspection</h3>
+        <p>For new components, a full first-article inspection is carried out against the client's drawing before series production begins — ensuring every dimension is validated before commitment.</p>
+      </div>
+      <div class="qms-pillar">
+        <h3>Document Control</h3>
+        <p>All work orders, inspection records, and delivery notes are documented and retained in accordance with ISO 9001:2015 requirements — providing full traceability for every job.</p>
+      </div>
+      <div class="qms-pillar">
+        <h3>Supplier Evaluation</h3>
+        <p>Raw material suppliers are evaluated and approved in line with our QMS procedures — ensuring the material entering our facility meets the grade and quality required by the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSPECTION FLOW ══ -->
+<section class="inspection-flow-section">
+  <div class="container">
+    <p class="section-label">Inspection Process</p>
+    <h2 class="section-title">Multi-Stage Quality Verification</h2>
+    <div class="divider"></div>
+    <p style="max-width: 680px;">We follow a rigorous multi-stage inspection process to ensure every component leaving our facility meets the required dimensional accuracy and surface quality specifications.</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <h4>Raw Material Received</h4>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <h4>First Article Inspection</h4>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <h4>In-Process Checks</h4>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <h4>Final Internal Inspection</h4>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">5</div>
+        <h4>CMM External Verification</h4>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">6</div>
+        <h4>Dispatch &amp; Delivery</h4>
+      </div>
+    </div>
+
+    <div class="inspection-two-col">
+      <div class="inspection-panel">
+        <h3>Internal Inspection</h3>
+        <ul class="check-list">
+          <li>Dimensional verification using precision gauges and measuring instruments</li>
+          <li>In-process checks at each machining stage</li>
+          <li>Visual inspection for surface finish and defects</li>
+          <li>First-article inspection for new components</li>
+          <li>Final inspection before dispatch</li>
+        </ul>
+      </div>
+      <div class="inspection-panel">
+        <h3>Independent Inspection</h3>
+        <ul class="check-list">
+          <li>External CMM (Coordinate Measuring Machine) inspection for critical components</li>
+          <li>Third-party dimensional certification available on request</li>
+          <li>Traceable measurement reports provided to clients</li>
+          <li>Ensures unbiased verification of complex geometries and tight tolerances</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MEASURING EQUIPMENT ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Measurement</p>
+    <h2 class="section-title">Measuring Instruments &amp; Tools</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom: 2rem; max-width: 640px;">Accurate measurement is as important as accurate machining. Our facility is equipped with precision gauging instruments to verify dimensions at every stage of production.</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <h3>In-House Instruments</h3>
+        <ul class="check-list" style="margin-top: 0.5rem;">
+          <li>Vernier callipers and digital callipers</li>
+          <li>Micrometer sets (outside, inside, depth)</li>
+          <li>Dial test indicators and dial gauges</li>
+          <li>Height gauges and surface plates</li>
+          <li>Bore gauges and plug gauges</li>
+          <li>Thread gauges and ring gauges</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>External CMM Verification</h3>
+        <ul class="check-list" style="margin-top: 0.5rem;">
+          <li>External CMM inspection arranged for critical or high-tolerance components</li>
+          <li>Measurement reports with traceable calibration references</li>
+          <li>Ballooned drawing inspection against all critical dimensions</li>
+          <li>Available as a standard service or on client request</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Quality you can rely on.</h2>
+    <p>Our certification and inspection process gives you the confidence that every component meets your drawing requirements — first time, every time.</p>
+    <a href="contact.html" class="btn btn-primary">Talk to Our Team</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

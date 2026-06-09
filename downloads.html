@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloads — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .download-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.6rem 2rem;
+      border: 1px solid #e0e3e8;
+      border-left: 4px solid var(--red);
+      background: var(--white);
+      transition: box-shadow 0.2s;
+      margin-bottom: 1rem;
+    }
+    .download-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    .download-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .download-icon svg { fill: white; }
+    .download-info { flex: 1; }
+    .download-info h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .download-info p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+    .download-meta {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    /*
+    ══════════════════════════════════════════════════════════════
+    HOW TO ADD / UPDATE DOWNLOADS — NO CODING NEEDED
+    ══════════════════════════════════════════════════════════════
+
+    This page is organised into sections (Brochures, Data Sheets, etc.)
+    To add a new download:
+
+    1. Upload your file to Google Drive (or any cloud link)
+    2. Right-click → Share → "Anyone with the link" → Copy link
+    3. In the link, replace everything with:
+         https://drive.google.com/uc?export=download&id=FILE_ID
+       (FILE_ID is the long string in your Google Drive share URL)
+    4. Copy one of the download-card blocks below
+    5. Paste it into the right section
+    6. Update: title, description, file type, and the href= link
+
+    To remove a download: delete the entire <div class="download-card"> block.
+
+    ══════════════════════════════════════════════════════════════
+    -->
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Resources</p>
+    <h1>Downloads</h1>
+    <p>Download our company brochure, capability sheets, and quality documents.</p>
+  </div>
+</section>
+
+<!-- ══ BROCHURES ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Company Documents</p>
+    <h2 class="section-title">Brochures &amp; Capability Sheets</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:2rem;max-width:620px;">
+      Download our documents below. To request additional technical information or a custom capability statement, please <a href="contact.html" style="color:var(--red);">contact us</a>.
+    </p>
+
+    <!--
+    ════════════════════════════════════════════════════
+    TO UPDATE THE BROCHURE LINK:
+    1. Upload your brochure PDF to Google Drive
+    2. Share it as "Anyone with the link can view"
+    3. Copy the share link — it looks like:
+       https://drive.google.com/file/d/FILEID/view?usp=sharing
+    4. Change it to the download format:
+       https://drive.google.com/uc?export=download&id=FILEID
+    5. Paste that URL into the href= below
+    ════════════════════════════════════════════════════
+    -->
+
+    <div class="download-card">
+      <div class="download-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><polyline points="9 15 12 18 15 15"/></svg>
+      </div>
+      <div class="download-info">
+        <h3>Company Brochure</h3>
+        <p>Overview of M/s S.K. Gandhi — our capabilities, team, infrastructure, clients, and quality certification.</p>
+        <div class="download-meta">PDF &nbsp;·&nbsp; Updated 2025</div>
+      </div>
+      <!--
+        REPLACE the href value below with your actual Google Drive download link.
+        Format: https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
+      -->
+      <a href="https://drive.google.com/uc?export=download&id=1nsjZMbNetpJMdifZfrhFC2B0ELLpjVkg"
+         class="btn btn-primary"
+         download
+         target="_blank"
+         rel="noopener">
+        Download PDF
+      </a>
+    </div>
+
+    <!-- ── Add more brochures / data sheets below by copying the block above ── -->
+
+    <!--
+    EXAMPLE — uncomment and fill in to add another document:
+
+    <div class="download-card">
+      <div class="download-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><polyline points="9 15 12 18 15 15"/></svg>
+      </div>
+      <div class="download-info">
+        <h3>Graphite Machining Capability Sheet</h3>
+        <p>Detailed specifications of our graphite machining capabilities, equipment, and past applications.</p>
+        <div class="download-meta">PDF · Updated 2025</div>
+      </div>
+      <a href="https://drive.google.com/uc?export=download&id=1nsjZMbNetpJMdifZfrhFC2B0ELLpjVkg" class="btn btn-primary" download target="_blank" rel="noopener">
+        Download PDF
+      </a>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- ══ QUALITY DOCUMENTS ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">Quality</p>
+    <h2 class="section-title">Certification Documents</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:2rem;max-width:620px;">
+      Our ISO 9001:2015 certificate is available for download for vendor qualification or audit purposes.
+    </p>
+
+    <div class="download-card">
+      <div class="download-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="download-info">
+        <h3>ISO 9001:2015 Certificate</h3>
+        <p>Certificate No. 305026051456Q — Issued by QRO, a IAF accredited body. Valid until 13th May 2029.</p>
+        <div class="download-meta">PDF &nbsp;·&nbsp; Valid until May 2029</div>
+      </div>
+      <!--
+        REPLACE the href value below with your certificate PDF Google Drive download link.
+      -->
+      <a href="https://drive.google.com/uc?export=download&id=1m5TNodb_WuHdeFaObJeaf6EYSZfdXIeD"
+         class="btn btn-outline-red"
+         download
+         target="_blank"
+         rel="noopener">
+        Download Certificate
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

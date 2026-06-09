@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure &amp; Facilities — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .machine-section {
+      margin-bottom: 3.5rem;
+    }
+    .machine-section-title {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .machine-section h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #e0e3e8;
+    }
+
+    /* Featured machine block */
+    .machine-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    .machine-feature .media-placeholder {
+      height: 280px;
+    }
+    .machine-detail-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.15rem;
+    }
+    .machine-detail-value {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
+    }
+    .machine-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Small machine gallery row */
+    .machine-gallery-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .machine-thumb {
+      border: 1px solid #e0e3e8;
+      overflow: hidden;
+    }
+    .machine-thumb .media-placeholder {
+      height: 180px;
+    }
+    .machine-thumb-caption {
+      padding: 0.65rem 0.85rem;
+      background: var(--off-white);
+      border-top: 1px solid #e0e3e8;
+    }
+    .machine-thumb-caption strong {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.1rem;
+    }
+    .machine-thumb-caption span {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* Video placeholder */
+    .video-placeholder {
+      background: #1a1f2b;
+      border: 2px dashed #3a4558;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6b7d99;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 2rem;
+      gap: 0.75rem;
+      height: 320px;
+    }
+    .video-placeholder .play-icon {
+      width: 56px;
+      height: 56px;
+      border: 2px solid #3a4558;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2rem;
+      border-left: 4px solid var(--red);
+    }
+    .highlight-box h4 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box p {
+      color: #a0aebf;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .machine-feature { grid-template-columns: 1fr; }
+      .machine-gallery-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .machine-gallery-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Our Facility</p>
+    <h1>Infrastructure &amp; Capabilities</h1>
+    <p>Modern CNC and VMC machinery alongside conventional equipment — enabling us to handle components from intricate precision parts to large heavy engineering workpieces.</p>
+  </div>
+</section>
+
+
+  </div>
+</div>
+
+<!-- ══ MACHINES ══ -->
+<section>
+  <div class="container">
+
+    <!-- Full Machine Table -->
+    <p class="section-label">Complete Equipment List</p>
+    <h2 class="section-title">Machinery &amp; Equipment</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom: 2rem;">Our facility is equipped with modern CNC and VMC machinery alongside conventional equipment, enabling us to handle components of varying complexity and scale.</p>
+
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Machine</th>
+            <th>Make / Origin</th>
+            <th>Working Dimensions (mm)</th>
+            <th>Controller</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Double Column VMC</td>
+            <td>KOLB (Germany)</td>
+            <td>3500 × 1500 × 1000</td>
+            <td>Mitsubishi</td>
+            <td>CNC / VMC</td>
+          </tr>
+          <tr>
+            <td>VMC</td>
+            <td>Hartford</td>
+            <td>1020 × 500 × 620</td>
+            <td>Fanuc</td>
+            <td>CNC / VMC</td>
+          </tr>
+          <tr>
+            <td>VMC</td>
+            <td>Johnford</td>
+            <td>1020 × 500 × 620</td>
+            <td>Fanuc</td>
+            <td>CNC / VMC</td>
+          </tr>
+          <tr>
+            <td>VMC</td>
+            <td>Feeler (Taiwan)</td>
+            <td>1020 × 500 × 620</td>
+            <td>Siemens</td>
+            <td>CNC / VMC</td>
+          </tr>
+          <tr>
+            <td>VMC</td>
+            <td>Samson (Taiwan)</td>
+            <td>4000 × 1000 × 900</td>
+            <td>Fanuc</td>
+            <td>CNC / VMC</td>
+          </tr>
+          <tr>
+            <td>Plano Milling Machine</td>
+            <td>HEC</td>
+            <td>5000 × 2000 × 1800</td>
+            <td>DRO</td>
+            <td>Conventional</td>
+          </tr>
+          <tr>
+            <td>Horizontal Milling Machines (4 nos.)</td>
+            <td>—</td>
+            <td>1000 × 300 × 300</td>
+            <td>Conventional</td>
+            <td>Conventional</td>
+          </tr>
+          <tr>
+            <td>Vertical Milling Machines (3 nos.)</td>
+            <td>—</td>
+            <td>1000 × 300 × 300</td>
+            <td>Conventional</td>
+            <td>Conventional</td>
+          </tr>
+          <tr>
+            <td>Radial Drilling Machines</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>Conventional</td>
+          </tr>
+          <tr>
+            <td>EOT Cranes</td>
+            <td>—</td>
+            <td>7.5T &amp; 5T capacity</td>
+            <td>—</td>
+            <td>Material Handling</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VMC MACHINES DETAIL ══ -->
+<section class="alt">
+  <div class="container">
+
+    <div class="machine-section">
+      <div class="machine-section-title">Flagship CNC Machine</div>
+      <h3>Double Column VMC — KOLB (Germany)</h3>
+      <div class="machine-feature">
+        <div>
+          <img src="images/machine-kolb.jpg" alt="KOLB Double Column VMC" style="width:100%;height:300px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        </div>
+        <div>
+          <div class="machine-badge">German Engineering</div>
+          <div class="machine-detail-label">Working Dimensions</div>
+          <div class="machine-detail-value">3500 × 1500 × 1000 mm</div>
+          <div class="machine-detail-label">Controller</div>
+          <div class="machine-detail-value">Mitsubishi</div>
+          <div class="machine-detail-label">Type</div>
+          <div class="machine-detail-value">Double Column Vertical Machining Centre</div>
+          <div class="machine-detail-label">Best Suited For</div>
+          <div class="machine-detail-value">Large dies, moulds, fixture bases, oversized precision components</div>
+          <p style="font-size: 0.95rem; margin-top: 0.5rem;">The KOLB Double Column VMC is our most capable machine for large-format precision work. With a 3500mm table length and Mitsubishi controller, it is the backbone of our heavy diecasting and tooling work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="machine-section">
+      <div class="machine-section-title">CNC / VMC Fleet</div>
+      <h3>VMC Machines</h3>
+      <div class="machine-gallery-row">
+        <div class="machine-thumb">
+          <img src="images/machine-hartford.jpg" alt="Hartford VMC" style="width:100%;height:190px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>VMC — Hartford</strong>
+            <span>1020 × 500 × 620 mm · Fanuc</span>
+          </div>
+        </div>
+        <div class="machine-thumb">
+          <img src="images/machine-johnford.jpg" alt="Johnford VMC" style="width:100%;height:190px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>VMC — Johnford</strong>
+            <span>1020 × 500 × 620 mm · Fanuc</span>
+          </div>
+        </div>
+        <div class="machine-thumb">
+          <img src="images/machine-feeler.jpg" alt="Feeler VMC" style="width:100%;height:190px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>VMC — Feeler (Taiwan)</strong>
+            <span>1020 × 500 × 620 mm · Siemens</span>
+          </div>
+        </div>
+      </div>
+      <!-- Samson large VMC -->
+      <div class="machine-feature" style="margin-top: 1.5rem;">
+        <div>
+          <img src="images/machine-samson.jpg" alt="Samson VMC" style="width:100%;height:260px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        </div>
+        <div>
+          <div class="machine-badge">Large Format VMC</div>
+          <div class="machine-detail-label">Make</div>
+          <div class="machine-detail-value">Samson (Taiwan)</div>
+          <div class="machine-detail-label">Working Dimensions</div>
+          <div class="machine-detail-value">4000 × 1000 × 900 mm</div>
+          <div class="machine-detail-label">Controller</div>
+          <div class="machine-detail-value">Fanuc</div>
+          <p style="font-size: 0.95rem;">The Samson large-format VMC extends our capability to components up to 4000mm in length with CNC precision — suitable for large fixture plates, bed machining, and structural components.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CONVENTIONAL MACHINES ══ -->
+<section>
+  <div class="container">
+    <div class="machine-section">
+      <div class="machine-section-title">Conventional Machines</div>
+      <h3>Plano Miller &amp; Milling Machines</h3>
+
+      <div class="machine-feature">
+        <div>
+          <img src="images/machine-plano.jpg" alt="HEC Plano Milling Machine" style="width:100%;height:280px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+        </div>
+        <div>
+          <div class="machine-badge">Large Format</div>
+          <div class="machine-detail-label">Machine</div>
+          <div class="machine-detail-value">Plano Milling Machine — HEC</div>
+          <div class="machine-detail-label">Working Dimensions</div>
+          <div class="machine-detail-value">5000 × 2000 × 1800 mm</div>
+          <div class="machine-detail-label">Controller</div>
+          <div class="machine-detail-value">DRO</div>
+          <p style="font-size: 0.95rem;">Our HEC Plano Miller is the largest machine in the facility — capable of machining oversized structural components, large surface plates, and heavy fabrications up to 5000mm in length.</p>
+        </div>
+      </div>
+
+      <div class="machine-gallery-row" style="margin-top: 1rem;">
+        <div class="machine-thumb">
+          <img src="images/machine-horiz-milling.jpg" alt="Horizontal Milling Machines" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>Horizontal Milling (4 nos.)</strong>
+            <span>1000 × 300 × 300 mm · Conventional</span>
+          </div>
+        </div>
+        <div class="machine-thumb">
+          <img src="images/machine-vert-milling.jpg" alt="Vertical Milling Machines" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>Vertical Milling (3 nos.)</strong>
+            <span>1000 × 300 × 300 mm · Conventional</span>
+          </div>
+        </div>
+        <div class="machine-thumb">
+          <img src="images/machine-radial-drill.jpg" alt="Radial Drilling Machines" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+          <div class="machine-thumb-caption">
+            <strong>Radial Drilling Machines</strong>
+            <span>Conventional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MATERIAL HANDLING + SPECIALTY ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">Supporting Infrastructure</p>
+    <h2 class="section-title">Material Handling &amp; Specialty Capabilities</h2>
+    <div class="divider"></div>
+    <div class="card-grid card-grid-2" style="margin-top: 2rem;">
+      <div class="card">
+        <h3>EOT Cranes — 7.5T &amp; 5T</h3>
+        <p>Our facility is equipped with overhead EOT cranes with capacities of 7.5 tonnes and 5 tonnes, enabling safe and efficient handling of large and heavy workpieces throughout the production process.</p>
+        <img src="images/eot-crane.jpg" alt="EOT Crane" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+      <div class="card">
+        <h3>Graphite &amp; Titanium Machining</h3>
+        <p>Dedicated machining setup for specialty materials including graphite and titanium — with a centralised vacuum dust collection system and specialised tooling that most facilities cannot offer.</p>
+        <img src="images/specialty-setup.jpg" alt="Specialty Machining Setup" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.background='#e8eaed'">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══ CTA ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Have a machining requirement?</h2>
+    <p>Our team will assess your drawing and advise on the best approach — from material selection to machining strategy.</p>
+    <a href="contact.html" class="btn btn-primary">Send Your Enquiry</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clients — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .client-card-full {
+      border: 1px solid #e0e3e8;
+      padding: 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .client-card-full:hover {
+      border-color: var(--red);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+    .client-logo-box {
+      width: 160px;
+      height: 80px;
+      background: #f0f2f5;
+      border: 1px dashed #c0c8d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: #888;
+      text-align: center;
+      padding: 0.5rem;
+      line-height: 1.4;
+    }
+    /* To use a real logo: replace the .client-logo-box div with an <img> tag */
+    .client-info .client-name {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .client-info .client-sector-tag {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.8rem;
+    }
+    .client-info p {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .sector-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .sector-label {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid #c8cdd5;
+      color: var(--text-mid);
+      cursor: default;
+    }
+    .sector-label.highlighted {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .testimonial-band {
+      background: var(--navy-mid);
+      padding: 60px 0;
+      border-top: 3px solid var(--red);
+    }
+    .testimonial-band blockquote {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .testimonial-band cite {
+      display: block;
+      margin-top: 1.2rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-style: normal;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Who We Serve</p>
+    <h1>Our Clients</h1>
+    <p>Trusted by some of India's and the world's most respected industrial names — across automotive, defence, energy, and heavy industry sectors.</p>
+  </div>
+</section>
+
+<!-- ══ STAT BAR ══ -->
+<div class="stat-bar">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-number">9<span class="stat-accent">+</span></div>
+        <div class="stat-label">Marquee Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50<span class="stat-accent">+</span></div>
+        <div class="stat-label">Years Serving Industry</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Industry Sectors</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Aerospace OEM Client</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CLIENT LIST ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Trusted By</p>
+    <h2 class="section-title">Industry Leaders Who Rely on Us</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom: 2rem; max-width: 680px;">We are proud to serve some of the most respected names in Indian and global industry. These relationships, built on consistent quality and reliable delivery, span years and in many cases decades.</p>
+
+    <!-- Sector tags for reference -->
+    <div class="sector-filter" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <button class="filter-btn active" data-sector="all">All Sectors</button>
+      <button class="filter-btn" data-sector="automotive">Automotive &amp; Diecasting</button>
+      <button class="filter-btn" data-sector="aerospace">Aerospace &amp; Defence</button>
+      <button class="filter-btn" data-sector="industrial">Industrial &amp; Energy</button>
+      <button class="filter-btn" data-sector="graphite">Graphite &amp; Materials</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+      <!-- Graphite India Limited -->
+      <div class="client-card-full" data-sector="graphite">
+        <div class="client-logo-box">
+          <img src="images/logo-gil.png" alt="Graphite India Limited" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>Graphite India Limited</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">Graphite India Limited</div>
+          <span class="client-sector-tag">Graphite &amp; Materials</span>
+          <p>One of India's leading manufacturers of graphite electrodes and specialty graphite products. We supply precision-machined graphite components including baffle plates and trays for their industrial and chemical applications.</p>
+        </div>
+      </div>
+
+      <!-- Mahindra & Mahindra -->
+      <div class="client-card-full" data-sector="automotive">
+        <div class="client-logo-box">
+          <img src="images/logo-mahindra.png" alt="Mahindra &amp; Mahindra" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>Mahindra &amp; Mahindra</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">Mahindra &amp; Mahindra</div>
+          <span class="client-sector-tag">Automotive &amp; Diecasting</span>
+          <p>A leading Indian multinational automotive manufacturer. We support their diecasting and tooling requirements with precision-machined dies, jigs, fixtures, and cast component machining.</p>
+        </div>
+      </div>
+
+      <!-- Atlas Copco -->
+      <div class="client-card-full" data-sector="industrial">
+        <div class="client-logo-box">
+          <img src="images/logo-atlascopco.png" alt="Atlas Copco" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>Atlas Copco</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">Atlas Copco</div>
+          <span class="client-sector-tag">Industrial &amp; Energy</span>
+          <p>A Swedish multinational industrial company specialising in compressors, vacuum solutions, and industrial tools. We supply precision-machined components meeting their exacting dimensional and quality standards.</p>
+        </div>
+      </div>
+
+      <!-- Bosch -->
+      <div class="client-card-full" data-sector="automotive">
+        <div class="client-logo-box">
+          <img src="images/logo-bosch.png" alt="Bosch" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>Bosch</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">Bosch</div>
+          <span class="client-sector-tag">Automotive &amp; Industrial</span>
+          <p>A global leader in technology and services for mobility, industrial technology, consumer goods, and energy. We machine precision components and tooling to Bosch's rigorous automotive and industrial quality requirements.</p>
+        </div>
+      </div>
+
+      <!-- ABB -->
+      <div class="client-card-full" data-sector="industrial">
+        <div class="client-logo-box">
+          <img src="images/logo-abb.png" alt="ABB" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>ABB</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">ABB</div>
+          <span class="client-sector-tag">Industrial &amp; Energy</span>
+          <p>A global technology company leading the digital transformation of industries. We supply precision-machined components for ABB's industrial and energy applications, meeting the dimensional accuracy their systems demand.</p>
+        </div>
+      </div>
+
+      <!-- HAL -->
+      <div class="client-card-full" data-sector="aerospace">
+        <div class="client-logo-box">
+          <img src="images/logo-hal.png" alt="HAL" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>HAL</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">HAL — Hindustan Aeronautics Limited</div>
+          <span class="client-sector-tag">Aerospace &amp; Defence</span>
+          <p>India's premier state-owned aerospace and defence company, responsible for the design, manufacture, and maintenance of military aircraft. We supply precision-machined titanium components meeting strict aerospace-grade tolerances — one of our most demanding and prestigious supply relationships.</p>
+        </div>
+      </div>
+
+      <!-- ASB International -->
+      <div class="client-card-full" data-sector="industrial">
+        <div class="client-logo-box">
+          <img src="images/logo-asb.png" alt="ASB International" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>ASB International</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">ASB International</div>
+          <span class="client-sector-tag">Industrial</span>
+          <p>We supply precision-machined components and tooling to ASB International, supporting their manufacturing and industrial production requirements.</p>
+        </div>
+      </div>
+
+      <!-- JBM Group -->
+      <div class="client-card-full" data-sector="automotive">
+        <div class="client-logo-box">
+          <img src="images/logo-jbm.png" alt="JBM Group" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>JBM Group</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">JBM Group</div>
+          <span class="client-sector-tag">Automotive &amp; Diecasting</span>
+          <p>A diversified business group with interests in automotive components, renewable energy, and education. We support their automotive diecasting requirements with precision dies, fixtures, and component machining.</p>
+        </div>
+      </div>
+
+      <!-- Epiroc -->
+      <div class="client-card-full" data-sector="industrial">
+        <div class="client-logo-box">
+          <img src="images/logo-epiroc.png" alt="Epiroc" style="max-width:130px;max-height:55px;object-fit:contain;" onerror="this.outerHTML='<span>Epiroc</span>'">
+        </div>
+        <div class="client-info">
+          <div class="client-name">Epiroc</div>
+          <span class="client-sector-tag">Industrial &amp; Mining</span>
+          <p>A leading productivity partner for the mining, infrastructure, and natural resources industries. We supply precision-machined components meeting the demanding operational requirements of Epiroc's industrial equipment.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTORS ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">Industry Sectors</p>
+    <h2 class="section-title">Sectors We Serve</h2>
+    <div class="divider"></div>
+    <div class="card-grid card-grid-4" style="margin-top: 2rem;">
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Automotive &amp; Diecasting</h3>
+        <p style="font-size: 0.88rem;">Dies, moulds, fixtures, and component machining for automotive diecasting operations.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Aerospace &amp; Defence</h3>
+        <p style="font-size: 0.88rem;">Titanium and specialty material machining to aerospace-grade tolerances for defence OEMs.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Industrial &amp; Energy</h3>
+        <p style="font-size: 0.88rem;">Precision components and heavy fabrications for industrial equipment and energy applications.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Graphite &amp; Materials</h3>
+        <p style="font-size: 0.88rem;">Specialised graphite component machining for chemical, nuclear, and casting industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Join a trusted supply chain.</h2>
+    <p>Whether you are a new client or looking to qualify a new supplier, we welcome enquiries from engineering and procurement teams.</p>
+    <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

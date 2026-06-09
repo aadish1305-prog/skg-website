@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .job-card {
+      border: 1px solid #e0e3e8;
+      border-left: 4px solid var(--red);
+      padding: 1.8rem 2rem;
+      background: var(--white);
+      margin-bottom: 1rem;
+      transition: box-shadow 0.2s;
+    }
+    .job-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .job-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .job-title { font-family: var(--font-head); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .job-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .job-tag {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      background: var(--off-white);
+      border: 1px solid #d0d5dc;
+      color: var(--text-mid);
+    }
+    .job-tag.open { background: #eaf5ea; border-color: #6abf69; color: #2e7d32; }
+    .job-desc { font-size: 0.93rem; color: var(--text-mid); margin: 0; }
+    .apply-btn { flex-shrink: 0; }
+
+    /* Loading / empty states */
+    .jobs-loading { text-align:center; padding: 3rem; color: var(--text-light); font-family: var(--font-body); }
+    .jobs-empty { text-align:center; padding: 3rem; background: var(--off-white); border: 1px solid #e0e3e8; }
+    .jobs-empty h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .jobs-empty p { font-size: 0.92rem; color: var(--text-mid); margin: 0; }
+
+    .open-application {
+      background: var(--navy);
+      padding: 2.5rem;
+      border-left: 4px solid var(--red);
+      margin-top: 2rem;
+    }
+    .open-application h3 { color: var(--white); margin-bottom: 0.5rem; }
+    .open-application p { color: #a0aebf; font-size: 0.95rem; margin-bottom: 1.2rem; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .value-item {
+      padding: 1.8rem;
+      border: 1px solid #e0e3e8;
+      border-top: 3px solid var(--red);
+    }
+    .value-item h4 { font-size: 1rem; margin-bottom: 0.4rem; }
+    .value-item p { font-size: 0.9rem; color: var(--text-mid); margin: 0; }
+
+    @media (max-width: 640px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .job-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Join Our Team</p>
+    <h1>Careers at M/s S.K. Gandhi</h1>
+    <p>We are always looking for skilled, driven individuals who take pride in their craft. If precision and quality matter to you, we'd like to hear from you.</p>
+  </div>
+</section>
+
+<!-- ══ OPEN POSITIONS ══ -->
+<section>
+  <div class="container">
+    <p class="section-label">Current Openings</p>
+    <h2 class="section-title">Open Positions</h2>
+    <div class="divider"></div>
+    <p style="max-width:640px;margin-bottom:2rem;">
+      Positions are loaded from our live job list. Check back regularly — we update openings as they arise.
+    </p>
+
+    <!--
+    ════════════════════════════════════════════════════════════════
+    HOW TO MANAGE JOBS — NO CODING NEEDED (Google Sheets method)
+    ════════════════════════════════════════════════════════════════
+
+    SETUP (one time, ~10 minutes):
+    1. Go to sheets.google.com → Create a new spreadsheet
+    2. Name it "SKG Careers"
+    3. Set up columns exactly like this (row 1 = headers):
+       A: Title     B: Department     C: Type (Full-time/Part-time)
+       D: Status (Open/Closed)        E: Description      F: ApplyLink
+    4. Add your jobs as rows. Example row:
+       VMC Operator | Shop Floor | Full-time | Open | Operate VMC machines... | https://forms.google.com/...
+    5. File → Share → Publish to web → Sheet1 → CSV format → Publish
+    6. Copy the CSV URL and paste it below where it says PASTE-YOUR-CSV-URL
+
+    TO ADD A JOB: Add a row in the Google Sheet → Save → Page updates automatically
+    TO REMOVE A JOB: Delete the row or change Status to "Closed"
+    TO EDIT A JOB: Edit the cell → Save
+
+    The website reads this sheet every time the page loads.
+
+    APPLY LINK: Create a Google Form for applications (forms.google.com)
+    and paste the form URL into column F for each job.
+    ════════════════════════════════════════════════════════════════
+    -->
+
+    <div id="jobs-container">
+      <div class="jobs-loading">Loading positions…</div>
+    </div>
+
+    <!-- Open application block (always shown) -->
+    <div class="open-application">
+      <h3>Don't see a role that fits?</h3>
+      <p>We accept open applications from skilled machinists, CNC operators, engineers, and quality professionals at any time. Send us your CV and we'll reach out when a suitable role opens.</p>
+      <!--
+        Replace the href below with your Google Form link for open applications.
+        Go to forms.google.com → Create a form → Copy the link
+      -->
+      <a href="PASTE-YOUR-OPEN-APPLICATION-FORM-LINK-HERE" target="_blank" rel="noopener" class="btn btn-primary">
+        Submit Open Application
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY WORK WITH US ══ -->
+<section class="alt">
+  <div class="container">
+    <p class="section-label">Why Join Us</p>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="divider"></div>
+    <div class="values-grid">
+      <div class="value-item">
+        <h4>Craft &amp; Skill Development</h4>
+        <p>Work on challenging, diverse engineering jobs — from aerospace-grade titanium to large die fabrication. Every job teaches you something new.</p>
+      </div>
+      <div class="value-item">
+        <h4>Stable, Long-Standing Company</h4>
+        <p>Over 50 years in business, with a loyal client base and a reputation built on consistency. A stable employer with a track record.</p>
+      </div>
+      <div class="value-item">
+        <h4>Modern Equipment</h4>
+        <p>Operate industry-leading VMC machines from Germany and Taiwan — Mitsubishi, Fanuc, and Siemens controlled. Work with the best tools available.</p>
+      </div>
+      <div class="value-item">
+        <h4>Respected Clients</h4>
+        <p>Your work goes into components for Mahindra, HAL, Bosch, Atlas Copco, and others. Know that what you make matters.</p>
+      </div>
+      <div class="value-item">
+        <h4>Team Environment</h4>
+        <p>A close-knit team of 20 professionals where your contribution is visible, valued, and directly impacts the quality we deliver.</p>
+      </div>
+      <div class="value-item">
+        <h4>MIDC Satpur, Nashik</h4>
+        <p>Conveniently located in one of Nashik's premier industrial zones, with easy access from across the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+/*
+  JOBS LOADER — reads directly from your published Google Sheet CSV
+  No proxy needed. Google Sheets published CSVs allow direct browser access.
+
+  TO MANAGE JOBS: Edit your Google Sheet. Changes appear within ~5 minutes.
+  TO ADD A JOB:   Add a row, Status = Open
+  TO REMOVE A JOB: Delete the row or change Status to Closed
+*/
+
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS60X3fe8FF650Z9eBB_SUGBDSa-w42qOrb5gUQKc03O4Iw54lmvys04kyY26Ba2BXwbk_QP9rnV2tH/pub?gid=0&single=true&output=csv';
+
+async function loadJobs() {
+  const container = document.getElementById('jobs-container');
+
+  if (window.location.protocol === 'file:') {
+    container.innerHTML = renderPlaceholderJobs('⚙ Local file preview — open via a local server (python -m http.server 8080) to load live jobs.');
+    return;
+  }
+
+  try {
+    // Fetch directly — published Google Sheets CSVs support CORS natively
+    const res = await fetch(CSV_URL + '&t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    if (!text || !text.trim()) throw new Error('Empty sheet response');
+
+    const rows = text.trim().replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n').slice(1);
+
+    const jobs = rows
+      .filter(row => row.trim())
+      .map(row => {
+        const cols = [];
+        let cur = '', inQ = false;
+        for (let i = 0; i < row.length; i++) {
+          if (row[i] === '"') { inQ = !inQ; continue; }
+          if (row[i] === ',' && !inQ) { cols.push(cur.trim()); cur = ''; continue; }
+          cur += row[i];
+        }
+        cols.push(cur.trim());
+        return {
+          title:       (cols[0]||'').trim(),
+          department:  (cols[1]||'').trim(),
+          type:        (cols[2]||'').trim(),
+          status:      (cols[3]||'').trim().toLowerCase(),
+          description: (cols[4]||'').trim(),
+          applyLink:   (cols[5]||'').trim(),
+        };
+      })
+      .filter(j => j.title && j.status === 'open');
+
+    if (jobs.length === 0) {
+      container.innerHTML = `
+        <div class="jobs-empty">
+          <h3>No open positions at the moment.</h3>
+          <p>We are not actively hiring right now, but you are welcome to submit an open application below.</p>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = jobs.map(job => `
+      <div class="job-card">
+        <div class="job-header">
+          <div>
+            <div class="job-title">${escHtml(job.title)}</div>
+            <div class="job-meta">
+              ${job.department ? `<span class="job-tag">${escHtml(job.department)}</span>` : ''}
+              ${job.type       ? `<span class="job-tag">${escHtml(job.type)}</span>`       : ''}
+              <span class="job-tag open">Open</span>
+            </div>
+            ${job.description ? `<p class="job-desc">${escHtml(job.description)}</p>` : ''}
+          </div>
+          ${job.applyLink
+            ? `<a href="${escHtml(job.applyLink)}" target="_blank" rel="noopener" class="btn btn-primary apply-btn">Apply Now</a>`
+            : `<a href="contact.html" class="btn btn-outline-red apply-btn">Enquire</a>`}
+        </div>
+      </div>`).join('');
+
+  } catch (err) {
+    container.innerHTML = `
+      <div class="jobs-empty">
+        <h3>Could not load positions right now.</h3>
+        <p>Please check back later or <a href="contact.html" style="color:var(--red)">contact us</a> directly.</p>
+      </div>`;
+    console.error('Jobs load error:', err.message);
+  }
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderPlaceholderJobs(note) {
+  return `
+    <div style="background:var(--off-white);border:2px dashed #c8cdd5;padding:1.2rem 1.8rem;margin-bottom:1.5rem;font-family:var(--font-body);font-size:0.88rem;color:var(--text-mid);line-height:1.6;">
+      <strong style="color:var(--navy);">${note}</strong>
+    </div>
+    ${[{t:'VMC Operator',d:'Shop Floor',y:'Full-time'},{t:'CNC Programmer',d:'Engineering',y:'Full-time'},{t:'Quality Inspector',d:'Quality',y:'Full-time'}].map(j=>`
+    <div class="job-card" style="opacity:0.45;pointer-events:none;">
+      <div class="job-header"><div>
+        <div class="job-title">${j.t} <small style="font-size:0.72rem;color:var(--text-light);font-weight:400;">(sample)</small></div>
+        <div class="job-meta"><span class="job-tag">${j.d}</span><span class="job-tag">${j.y}</span><span class="job-tag open">Open</span></div>
+      </div></div>
+    </div>`).join('')}`;
+}
+
+loadJobs();
+</script>
+</body>
+</html>

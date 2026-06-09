@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — M/s S.K. Gandhi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info-block {
+      margin-bottom: 2.5rem;
+    }
+    .contact-info-block h4 {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .contact-info-block p,
+    .contact-info-block address {
+      font-style: normal;
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .contact-info-block a {
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .contact-info-block a:hover { color: var(--red); }
+
+    .contact-person {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+      border: 1px solid #e0e3e8;
+      border-left: 3px solid var(--red);
+      margin-bottom: 1rem;
+    }
+    .contact-person-role {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 700;
+      margin-bottom: 0.1rem;
+    }
+    .contact-person-name {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .contact-person a {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      display: block;
+      transition: color 0.2s;
+    }
+    .contact-person a:hover { color: var(--red); }
+
+    .form-panel {
+      background: var(--off-white);
+      padding: 2.5rem;
+      border: 1px solid #e0e3e8;
+    }
+    .form-panel h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+    .form-panel .form-intro {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .submit-note {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    /* Map placeholder */
+    .map-placeholder {
+      background: #dde2e8;
+      border: 2px dashed #aab0bb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      text-align: center;
+      padding: 2rem;
+      gap: 0.75rem;
+      height: 380px;
+    }
+
+    @media (max-width: 960px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-panel { padding: 1.5rem; }
+      .submit-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="S.K. Gandhi Logo" style="height:44px;width:auto;" onerror="this.style.display='none'">
+      <div class="nav-logo-text">
+        <span class="brand-name">M/s S.K. Gandhi</span>
+        <span class="brand-sub">Heavy Engineering &amp; Precision Machining</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="products.html">Products &amp; Services</a></li>
+      <li><a href="quality.html">Quality</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">Reach Us</p>
+    <h1>Contact Us</h1>
+    <p>Whether you have a drawing to share, a production requirement to discuss, or want to qualify us as a supplier — we are happy to hear from you.</p>
+  </div>
+</section>
+
+<!-- ══ CONTACT MAIN ══ -->
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div>
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title" style="margin-bottom: 1.4rem;">M/s S.K. Gandhi</h2>
+        <div class="divider"></div>
+
+        <div class="contact-info-block">
+          <h4>Address</h4>
+          <address>
+            Plot D 21/22, Street 11, Road B,<br>
+            MIDC Satpur,<br>
+            Nashik – 422007,<br>
+            Maharashtra, India
+          </address>
+        </div>
+
+        <div class="contact-info-block">
+          <h4>Contact Persons</h4>
+          <div class="contact-person">
+            <div>
+              <div class="contact-person-role">Chief Executive Officer</div>
+              <div class="contact-person-name">Gajkumar Gandhi</div>
+              <a href="tel:+919822029872">+91 98220 29872</a>
+              <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+              <a href="https://www.linkedin.com/in/gajkumar-gandhi-b76977232/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.25rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+          <div class="contact-person">
+            <div>
+              <div class="contact-person-role">Chief Operating Officer</div>
+              <div class="contact-person-name">Aadish Gandhi</div>
+              <a href="tel:+918888830806">+91 88888 30806</a>
+              <a href="https://www.linkedin.com/in/aadish-gandhi/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.25rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-block">
+          <h4>Company LinkedIn</h4>
+          <p><a href="https://www.linkedin.com/company/m-s-s-k-gandhi/posts/?feedView=all" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--navy);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            M/s S.K. Gandhi on LinkedIn
+          </a></p>
+        </div>
+
+        <div class="contact-info-block">
+          <h4>Certifications</h4>
+          <p>ISO 9001:2015 Certified<br>
+          Certificate No. 305026051456Q<br>
+          Valid until 13th May 2029</p>
+        </div>
+
+        <div class="contact-info-block">
+          <h4>Working Hours</h4>
+          <p>Monday – Friday &nbsp;·&nbsp; 9:00 AM – 6:00 PM IST<br>
+          Sunday &nbsp;·&nbsp; 9:00 AM – 6:00 PM IST<br>
+          <span style="color:var(--text-light);font-size:0.9rem;">Saturday — Closed</span></p>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div>
+        <div class="form-panel">
+          <h3>Send an Enquiry</h3>
+          <p class="form-intro">Upload your CAD drawings and work order details below — we will review and send you a quote the same day. For urgent requirements, please call directly.</p>
+
+          <form action="https://formsubmit.co/gajkumargandhi@gmail.com" method="POST" enctype="multipart/form-data">
+              <!-- FormSubmit configuration -->
+              <input type="hidden" name="_subject" value="New Enquiry — M/s S.K. Gandhi Website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_autoresponse" value="Thank you for your enquiry. We have received your message and will get back to you within the same working day. — M/s S.K. Gandhi">
+              <input type="hidden" name="_cc" value="gajkumargandhi@gmail.com">
+              <!-- Redirect after submission: update this URL once your domain is live -->
+              <input type="hidden" name="_next" value="https://YOURWEBSITE.com/contact.html">
+              <!-- Disable honeypot (optional, re-enable if you get spam) -->
+              <input type="hidden" name="_captcha" value="false">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Organisation / firm" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject / Requirement Type</label>
+              <select id="subject" name="subject">
+                <option value="">— Select —</option>
+                <option>Tools, Dies, Jigs &amp; Fixtures</option>
+                <option>Graphite Machining</option>
+                <option>Titanium Machining</option>
+                <option>Heavy Fabrication</option>
+                <option>General Enquiry / Vendor Registration</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message / Requirement Details *</label>
+              <textarea id="message" name="message" placeholder="Describe your requirement — material, approximate dimensions, quantity, and any tolerance or delivery requirements." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cad_files">Upload CAD Drawings / Work Documents</label>
+              <input type="file" id="cad_files" name="cad_files" accept=".pdf,.dwg,.dxf,.step,.stp,.igs,.iges,.jpg,.png,.zip" multiple
+                style="border:1px dashed #c8cdd5; background:#f8f9fb; padding:0.85rem 1rem; cursor:pointer;">
+              <small style="display:block;margin-top:0.4rem;color:var(--text-light);font-size:0.8rem;">
+                Accepted: PDF, DWG, DXF, STEP, IGES, JPG, PNG, ZIP &nbsp;·&nbsp; Max 20 MB per file &nbsp;·&nbsp; Multiple files allowed
+              </small>
+            </div>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+              <span class="submit-note">We respond within 1 working day.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAP ══ -->
+<section class="alt" style="padding-top: 0; padding-bottom: 0;">
+  <div class="container" style="padding-top: 0; padding-bottom: 0;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.236238128006!2d73.7404257793457!3d19.99859740000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdded18f1dc9fb3%3A0x936b14c584755be8!2sM%2Fs%20S.K.Gandhi!5e0!3m2!1sen!2sin!4v1780997751117!5m2!1sen!2sin"
+      width="100%"
+      height="420"
+      style="border:0;display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="M/s S.K. Gandhi — MIDC Satpur, Nashik">
+    </iframe>
+  </div>
+</section>
+
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">M/s S.K. Gandhi</div>
+        <div class="brand-sub">Heavy Engineering &amp; Precision Machining</div>
+        <p>Established 1973. Delivering precision-engineered components to India's leading industries from our facility at MIDC Satpur, Nashik.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="infrastructure.html">Infrastructure</a></li>
+          <li><a href="products.html">Products &amp; Services</a></li>
+          <li><a href="quality.html">Quality &amp; Certification</a></li>
+          <li><a href="clients.html">Our Clients</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          Plot D 21/22, Street 11, Road B,<br>
+          MIDC Satpur, Nashik – 422007<br>
+          Maharashtra, India<br><br>
+          <a href="tel:+919822029872">+91 98220 29872</a> (CEO)<br>
+          <a href="tel:+918888830806">+91 88888 30806</a> (COO)<br>
+          <a href="mailto:gajkumargandhi@gmail.com">gajkumargandhi@gmail.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 M/s S.K. Gandhi. All rights reserved.</span>
+      <span style="color: var(--red);">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
